@@ -1,5 +1,3 @@
-import 'package:e_commerce/screens/cart/cart_screen.dart';
-import 'package:e_commerce/screens/home.dart';
 import 'package:e_commerce/screens/screens.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +21,7 @@ class AppRouter {
 
   static Route _errorRoute() {
     return MaterialPageRoute(
-      settings: RouteSettings(name: '/error'),
+      settings: const RouteSettings(name: '/error'),
       builder: (_) => Scaffold(
         appBar: AppBar(
           title: const Text('Error'),

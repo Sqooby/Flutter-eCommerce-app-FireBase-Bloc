@@ -4,16 +4,18 @@ import '../widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = '/';
+
+  const HomeScreen({super.key});
   static Route route() {
     return MaterialPageRoute(
-      settings: RouteSettings(name: routeName),
-      builder: (_) => HomeScreen(),
+      settings: const RouteSettings(name: routeName),
+      builder: (_) => const HomeScreen(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: CustomAppBar(title: 'Unicorn'),
       bottomNavigationBar: CustomBottomBar(),
     );
