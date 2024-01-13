@@ -21,7 +21,7 @@ TextTheme textTheme() {
       fontWeight: FontWeight.bold,
     ),
     displayMedium: TextStyle(
-      color: Colors.white,
+      color: Colors.black,
       fontSize: 18,
       fontWeight: FontWeight.bold,
     ),
@@ -38,7 +38,6 @@ TextTheme textTheme() {
     labelMedium: TextStyle(
       color: Colors.white,
       fontSize: 12,
-      fontWeight: FontWeight.bold,
     ),
     labelSmall: TextStyle(
       color: Colors.white,
