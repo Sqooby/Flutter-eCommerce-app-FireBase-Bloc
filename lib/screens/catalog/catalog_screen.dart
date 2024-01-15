@@ -17,9 +17,24 @@ class CatalogScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Product> categoryProduct =
+        Product.products.where((product) => product.category == category.name).toList();
+
     return Scaffold(
-      appBar: CustomAppBar(title: category.name),
-      bottomNavigationBar: CustomBottomBar(),
-    );
+        appBar: CustomAppBar(title: category.name),
+        bottomNavigationBar: CustomBottomBar(),
+        body:
+            // gridView with products
+            GridView.builder(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          itemCount: categoryProduct.length,
+          itemBuilder: (context, index) {
+            return ProductCard(
+              product: categoryProduct[index],
+              widthFactor: 2.2,
+            );
+          },
+        ));
   }
 }

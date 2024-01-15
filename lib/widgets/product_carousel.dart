@@ -26,10 +26,12 @@ class ProductCarousel extends StatelessWidget {
             // print("Popular");
             // print(products[index].isPopular);
 
-            print(products[index].isPopular);
             return Padding(
               padding: const EdgeInsets.only(right: 5.0),
-              child: ProductCard(product: products[index]),
+              child: ProductCard(
+                product: products[index],
+                widthFactor: 2.5,
+              ),
             );
           }),
     );
