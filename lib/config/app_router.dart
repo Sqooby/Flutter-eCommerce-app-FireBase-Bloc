@@ -1,3 +1,4 @@
+import 'package:e_commerce/models/models.dart';
 import 'package:e_commerce/screens/screens.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class AppRouter {
       case CartScreen.routeName:
         return CartScreen.route();
       case CatalogScreen.routeName:
-        return CatalogScreen.route();
+        return CatalogScreen.route(category: settings.arguments as Category);
       case ProductScreen.routeName:
         return ProductScreen.route();
       case WishlistScreen.routeName:
