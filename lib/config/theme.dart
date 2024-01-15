@@ -36,7 +36,6 @@ TextTheme textTheme() {
       fontWeight: FontWeight.bold,
     ),
     labelMedium: TextStyle(
-      color: Colors.white,
       fontSize: 12,
     ),
     labelSmall: TextStyle(
