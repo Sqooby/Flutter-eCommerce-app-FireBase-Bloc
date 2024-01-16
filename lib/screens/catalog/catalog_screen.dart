@@ -23,7 +23,7 @@ class CatalogScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: CustomAppBar(title: category.name),
-      bottomNavigationBar: CustomBottomBar(),
+      bottomNavigationBar: const CustomBottomBar(),
       body:
           // gridView with products
           GridView.builder(
