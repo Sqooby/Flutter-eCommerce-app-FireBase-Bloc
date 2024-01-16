@@ -26,14 +26,13 @@ TextTheme textTheme() {
       fontWeight: FontWeight.bold,
     ),
     displaySmall: TextStyle(
-      color: Colors.white,
       fontSize: 16,
       fontWeight: FontWeight.bold,
+      color: Colors.black,
     ),
     bodySmall: TextStyle(
       color: Colors.white,
       fontSize: 14,
-      fontWeight: FontWeight.bold,
     ),
     labelMedium: TextStyle(
       fontSize: 12,
