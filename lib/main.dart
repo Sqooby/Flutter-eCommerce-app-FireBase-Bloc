@@ -1,6 +1,8 @@
+import 'package:e_commerce/blocs/cart/cart_bloc.dart';
 import 'package:e_commerce/blocs/wishlist/wishlist_bloc.dart';
 import 'package:e_commerce/config/app_router.dart';
 import 'package:e_commerce/config/theme.dart';
+import 'package:e_commerce/models/models.dart';
 import 'package:e_commerce/screens/home_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -16,7 +18,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider<WishlistBloc>(create: (_) => WishlistBloc()..add(StartWishList()))],
+      providers: [
+        BlocProvider<WishlistBloc>(create: (_) => WishlistBloc()..add(StartWishList())),
+        BlocProvider<CartBloc>(create: (_) => CartBloc()..add(CartStarted())),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: theme(),
