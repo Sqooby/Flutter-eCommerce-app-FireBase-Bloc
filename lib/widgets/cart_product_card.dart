@@ -7,9 +7,11 @@ import '../models/models.dart';
 // widget that shown product in cart
 class CartProductCard extends StatelessWidget {
   final Product product;
+  final int quantity;
   const CartProductCard({
     super.key,
     required this.product,
+    required this.quantity,
   });
 
   @override
@@ -54,7 +56,10 @@ class CartProductCard extends StatelessWidget {
                   },
                   icon: const Icon(Icons.remove_circle),
                 ),
-                Text(state.cart.), style: Theme.of(context).textTheme.displaySmall),
+                Text(
+                  '$quantity',
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
 
                 //add button
 
