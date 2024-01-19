@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../models/cart_model.dart';
 import '../../models/models.dart';
 
 part 'cart_event.dart';
