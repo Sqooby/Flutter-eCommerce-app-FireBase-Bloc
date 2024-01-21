@@ -30,60 +30,7 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: product.name),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.black,
-        child: SizedBox(
-          height: 70,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.share,
-                  color: Colors.white,
-                ),
-              ),
-              BlocBuilder<WishlistBloc, WishlistState>(
-                builder: (context, state) {
-                  if (state is WishlistLoaded) {
-                    return IconButton(
-                      onPressed: () {
-                        context.read<WishlistBloc>().add(AddProduct(product));
-                        const snackBar = SnackBar(content: Text('Added to your Wishlist! '));
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      },
-                      icon: const Icon(
-                        Icons.favorite,
-                        color: Colors.white,
-                      ),
-                    );
-                  } else {
-                    return const Text('Sth went wrong');
-                  }
-                },
-              ),
-              BlocBuilder<CartBloc, CartState>(
-                builder: (context, state) {
-                  return ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                    ),
-                    onPressed: () {
-                      context.read<CartBloc>().add(CartProductAdded(product));
-                      Navigator.pushNamed(context, '/cart');
-                    },
-                    child: Text(
-                      " ADD TO CART",
-                      style: Theme.of(context).textTheme.displayMedium,
-                    ),
-                  );
-                },
-              )
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: const CustomBottomBar(screen: routeName),
       body: ListView(children: [
         // photo with product
         CarouselSlider(
