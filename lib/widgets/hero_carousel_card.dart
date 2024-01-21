@@ -16,6 +16,7 @@ class HeroCarouselCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (product == null) {
+          // category!.addCategoryToFirebase();
           Navigator.pushNamed(
             context,
             '/catalog',

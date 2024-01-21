@@ -85,6 +85,7 @@ class ProductCard extends StatelessWidget {
                           return Expanded(
                             child: IconButton(
                               onPressed: () {
+                                // product.addProductsToFirebase();
                                 context.read<CartBloc>().add(CartProductAdded(product));
                               },
                               icon: const Icon(
