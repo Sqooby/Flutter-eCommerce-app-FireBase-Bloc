@@ -10,6 +10,9 @@
 .svn/
 migrate_working_dir/
 
+ios/Runner/GoogleService-Info.plist
+
+
 # IntelliJ related
 *.iml
 *.ipr
@@ -24,7 +27,7 @@ migrate_working_dir/
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
-**/ios/Runner/GoogleService-Info.plist
+
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
