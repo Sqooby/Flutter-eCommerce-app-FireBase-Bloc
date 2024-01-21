@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         theme: theme(),
         home: const HomeScreen(),
         onGenerateRoute: AppRouter.onGenerateRoute,
-        initialRoute: SplashScreen.routeName,
+        initialRoute: CheckoutScreen.routeName,
       ),
     );
   }
