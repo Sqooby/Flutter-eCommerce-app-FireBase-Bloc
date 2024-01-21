@@ -10,7 +10,7 @@
 .svn/
 migrate_working_dir/
 
-ios/Runner/GoogleService-Info.plist
+ios/Runner/
 
 
 # IntelliJ related
