@@ -1,4 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 
 class Category extends Equatable {
@@ -9,24 +12,42 @@ class Category extends Equatable {
     required this.imageUrl,
   });
 
-  static List<Category> categories = [
-    Category(
-      name: 'Soft Drinks',
-      imageUrl:
-          'https://images.unsplash.com/photo-1534057308991-b9b3a578f1b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-    ),
-    Category(
-      name: 'Smoothies',
-      imageUrl:
-          'https://images.unsplash.com/photo-1502741224143-90386d7f8c82?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-    ),
-    Category(
-      name: 'Water',
-      imageUrl:
-          'https://images.unsplash.com/photo-1559839914-17aae19cec71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-    ),
-  ];
+  //getting snapShot from FB
+  static Category fromSnapShot(DocumentSnapshot snap) {
+    Category category = Category(
+      name: snap['name'],
+      imageUrl: snap['imageUrl'],
+    );
+    return category;
+  }
+
+  //adding categories to DB
+
+  // Future<void> addCategoryToFirebase() async {
+  //   final CollectionReference productsCollection = FirebaseFirestore.instance.collection('categories');
+  //   for (final category in categories) {
+  //     await productsCollection.doc().set(category.toMap());
+  //   }
+  // }
 
   @override
   List<Object?> get props => [name, imageUrl];
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'name': name,
+      'imageUrl': imageUrl,
+    };
+  }
+
+  factory Category.fromMap(Map<String, dynamic> map) {
+    return Category(
+      name: map['name'] as String,
+      imageUrl: map['imageUrl'] as String,
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory Category.fromJson(String source) => Category.fromMap(json.decode(source) as Map<String, dynamic>);
 }
