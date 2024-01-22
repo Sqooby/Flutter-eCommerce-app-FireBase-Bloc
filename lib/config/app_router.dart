@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
+    print(settings.name);
     switch (settings.name) {
       case HomeScreen.routeName:
         return HomeScreen.route();
+      case CheckoutScreen.routeName:
+        return CheckoutScreen.route();
 
       case SplashScreen.routeName:
         return SplashScreen.route();
