@@ -5,6 +5,7 @@ import 'package:e_commerce/config/theme.dart';
 import 'package:e_commerce/firebase_options.dart';
 
 import 'package:e_commerce/repositories/category/category_repository.dart';
+import 'package:e_commerce/repositories/checkout/checkout_repository.dart';
 import 'package:e_commerce/repositories/product/product_repository.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -31,6 +32,11 @@ class MyApp extends StatelessWidget {
         BlocProvider<CartBloc>(create: (_) => CartBloc()..add(CartStarted())),
         BlocProvider(create: (_) => CategoryBloc(categoryRepository: CategoryRepository())..add(LoadCategories())),
         BlocProvider(create: (_) => ProductBloc(productRepository: ProductRepository())..add(LoadProducts())),
+        BlocProvider(
+            create: ((context) => CheckoutBloc(
+                  cartBloc: context.read<CartBloc>(),
+                  checkoutRepository: CheckoutRepository(),
+                ))),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
