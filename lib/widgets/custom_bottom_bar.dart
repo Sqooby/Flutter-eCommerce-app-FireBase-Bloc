@@ -22,7 +22,7 @@ class CustomBottomBar extends StatelessWidget {
         child: (screen == '/product')
             ? AddToCartNavBar(product: product!)
             : (screen == '/cart')
-                ? GoToCheckoutNavBar()
+                ? const GoToCheckoutNavBar()
                 : (screen == '/checkout')
                     ? const CheckoutBottomBar()
                     : HomeBottomBar(),
@@ -188,7 +188,9 @@ class CheckoutBottomBar extends StatelessWidget {
             if (state is CheckoutLoaded) {
               return ElevatedButton(
                 onPressed: () {
-                  context.read<CheckoutBloc>().add(ConfirmCheckout(checkout: state.checkout));
+                  context
+                      .read<CheckoutBloc>()
+                      .add(ConfirmCheckout(checkout: state.checkout));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
