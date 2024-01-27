@@ -179,7 +179,9 @@ class CheckoutBottomBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/order-confirmation');
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.white,
             shape: const RoundedRectangleBorder(),

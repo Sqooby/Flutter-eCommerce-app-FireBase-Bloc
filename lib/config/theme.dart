@@ -30,10 +30,7 @@ TextTheme textTheme() {
       fontWeight: FontWeight.bold,
       color: Colors.black,
     ),
-    bodySmall: TextStyle(
-      color: Colors.white,
-      fontSize: 14,
-    ),
+    bodySmall: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
     labelMedium: TextStyle(
       fontSize: 12,
     ),

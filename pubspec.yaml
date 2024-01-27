@@ -32,6 +32,7 @@ dependencies:
   carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.2
   equatable: ^2.0.5
+  flutter_svg: ^2.0.9
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
@@ -47,6 +48,7 @@ dev_dependencies:
 flutter:
   assets:
     - lib/assets/images/
+    - lib/assets/svg/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
